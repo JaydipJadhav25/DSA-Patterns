@@ -34,10 +34,22 @@ public class TwoSum {
       }
 
       // 2 . better approch = use hashmap
-      
+      // define hash
+      Map<Integer, Integer> stor = new HashMap<>();
 
+      // now travel on array
+      for (int i = 0; i < array.length; i++) {
+         int remain = targetsum - array[i];
 
-
+         // finde in element in array if yes then find value(index) of element
+         if (stor.containsKey(remain)) {
+            // get idex and return
+            System.out.println(stor.get(remain) + " and " + i);
+         } else {
+            // add current element in hashmap
+            stor.put(array[i], i);
+         }
+      }
 
       // 3. using two pointer
       int start = 0;
